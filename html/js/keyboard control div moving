@@ -1,0 +1,36 @@
+
+<html>
+<head>
+ <title>document.write() Example 4</title>
+ <script>
+ 	function dsd()
+ 	{
+ 		
+ 		var a=document.getElementById("go");
+ 		if(a.style.backgroundColor=="red")
+ 		a.style.backgroundColor="black";
+ 		else
+ 		a.style.backgroundColor="red";
+ 		var x=event.which||event.keyCode;
+ 		if(x==100)
+        a.style.left=parseFloat(a.style.left)+50+"px";
+        if(x ==97)
+        a.style.left=parseFloat(a.style.left)-50+"px";
+        if(x==115)
+        a.style.top=parseFloat(a.style.top)+50+"px";
+        if(x ==119)
+        a.style.top=parseFloat(a.style.top)-50+"px";
+         
+          
+ 
+ 	}
+ 	
+ </script>
+</head>
+<body  onkeypress="dsd()">
+<div id="go"  style="background-color: red; height: 100px; width: 100px; position: absolute; left:10px; top: 10px;"    >
+ 
+</div>
+<a  ></a>
+</body>
+</html> 
