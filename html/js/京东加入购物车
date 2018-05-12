@@ -1,0 +1,23 @@
+			//加入购物车  京东
+			function adds() {
+				//assigntime  format ： month,date,hour,second              指定时间   月{0~11},日，时，分
+				var opendate = [4, 12, 18, 35];
+				var qg = function qg() {
+					var currnet = new Date();
+					currnet = [currnet.getMonth(), currnet.getDate(), currnet.getHours(), currnet.getMinutes()];
+					var flag = 0;
+					for(var i = 0; i < opendate.length; i++) {
+						if(opendate[i] == currnet[i])
+							flag++;
+						
+					}
+					if(flag == 4) {
+							var sid = pageConfig.product.skuid;//    从js数据得到商品id
+							window.open("https://home.jd.com/");
+							clearInterval;
+						}
+					console.log(flag);
+
+				};
+				setInterval(qg, 1000);
+			}
