@@ -1,0 +1,51 @@
+// 先打开京东我的购物车页面：
+// F12 console  添加 下列 代码：
+//提交订单
+			function buy ()
+			{
+				//assigntime  format ： month,date,hour,second              指定时间   月{0~11},日，时，分
+				var buytime=[4,13,16,21,0];
+				var bought=1;
+				function istime()
+				{
+					var flag=0;
+					var current =new Date();
+					current=[current.getMonth(),current.getDate(),current.getHours(),current.getMinutes(),current.getSeconds()];
+					for(var i=0;i<current.length;i++)
+					{
+						if(current[i]==buytime[i])
+						flag++;
+						else
+						break;
+					}
+					if(flag==4)
+					{
+						return true;
+					}					
+					else window.location.reload();
+				};
+				function order()
+				{
+					var e = document.createEvent("MouseEvents");
+       				e.initEvent("click", true, true);
+       				if(document.getElementsByClassName("submit-btn").length)
+        			document.getElementsByClassName("submit-btn")[0].dispatchEvent(e);
+        			else
+        			bought=0;
+				};
+				function msubmit()
+				{
+					var e = document.createEvent("MouseEvents");
+       				e.initEvent("click", true, true);
+       				document.getElementById("order-submit").dispatchEvent(e);
+				};
+				if(istime())
+				{
+					setTimeout(order,500);
+				}
+				if(bought)
+				{
+					setTimeout(msubmit,500);
+				}	
+			};
+			buy();
