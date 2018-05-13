@@ -1,0 +1,6 @@
+//登陆进京东，打开所要加入购物车的商品页面，（预售的不用脚本添加不了购物车）
+//F12  console  输入：
+//code
+var sid = pageConfig.product.skuid;//    从js数据得到商品id
+window.open("//cart.jd.com/gate.action?pid="+sid+"&pcount=1&ptype=1");
+//code
