@@ -1,0 +1,47 @@
+$(
+			function zhihuishu()
+			{
+				var e=document.createEvent("MouseEvents");
+ 				e.initEvent("click",true,true);
+			//关闭弹窗
+			function mclose()
+			{
+			 
+				if(document.getElementsByClassName("popboxes_close tmui_txt_hidd").length)
+				document.getElementsByClassName("popboxes_close tmui_txt_hidd")[0].dispatchEvent(e);
+			};
+			setInterval(mclose,1000);
+			//关闭弹窗			 		
+			
+				
+ 				
+//轮播
+
+			var currentduration=document.getElementsByClassName("duration")[0];
+ 			var next=document.getElementsByClassName("next_lesson_bg tm_next_lesson")[0];
+ 			var h=Number(currentduration.textContent.split(":")[0]);
+ 			var m=Number(currentduration.textContent.split(":")[1]);
+ 			var s=Number(currentduration.textContent.split(":")[2]);
+ 			var time=h*3600+m*60+s;
+ 			function playnext()
+ 			{
+ 				
+ 				next.dispatchEvent(e);
+ 				setTimeout(function(){
+ 			currentduration=document.getElementsByClassName("duration")[0];
+ 			next=document.getElementsByClassName("next_lesson_bg tm_next_lesson")[0];
+ 			h=Number(currentduration.textContent.split(":")[0]);
+ 			m=Number(currentduration.textContent.split(":")[1]);
+ 			s=Number(currentduration.textContent.split(":")[2]);
+ 			time=h*3600+m*60+s+7;
+ 			console.log(time);
+ 			setTimeout(playnext,time*1000);	
+ 				},6000)
+ 			
+ 			}
+ 			setTimeout(playnext,time*1000);
+ 			console.log(time);
+ 			
+//轮播
+}
+		)
